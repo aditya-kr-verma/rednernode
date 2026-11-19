@@ -1,0 +1,9 @@
+{
+  "name": "render-backend-demo",
+  "version": "1.0.0",
+  "description": "Simple node backend for Render",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
