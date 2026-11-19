@@ -2,7 +2,7 @@ const http = require('http');
 const https = require('https');
 
 const PORT = process.env.PORT || 3000;
-// Replace this with your actual public Render URL once your service is created
+
 const APP_URL = 'https://rendernode-kjvr.onrender.com' 
 
 const server = http.createServer((req, res) => {
@@ -32,14 +32,13 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   
-  // Start the self-pinging loop to stop inactivity sleep
   setInterval(() => {
-    if (!APP_URL.includes('your-app-name')) { // Avoid running on local machine default
+    if (!APP_URL.includes('your-app-name')) { 
       https.get(APP_URL, (res) => {
         console.log(`Self-ping sent. Status: ${res.statusCode}`);
       }).on('error', (err) => {
         console.error(`Self-ping failed: ${err.message}`);
       });
     }
-  }, 12 * 60 * 1000); // 12 minutes loop
+  }, 12 * 60 * 1000); 
 });
