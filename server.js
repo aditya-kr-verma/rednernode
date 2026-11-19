@@ -3,7 +3,7 @@ const https = require('https');
 
 const PORT = process.env.PORT || 3000;
 // Replace this with your actual public Render URL once your service is created
-const APP_URL = 'https://onrender.com'; 
+const APP_URL = 'https://rendernode-kjvr.onrender.com' 
 
 const server = http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
